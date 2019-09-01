@@ -1,9 +1,9 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Lennon"
+name = "thewall"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/miuzel/thewall/blob/master/LICENSE"
 description = ""
 homepage = "http://example.com/"
 tags = []
