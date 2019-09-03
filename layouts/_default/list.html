@@ -18,7 +18,7 @@
                                 <h2>{{ .Title }}
                                     <time>{{ .Date.Format "2006-01-02" }}</time>
                                 </h2>
-                                {{ $thumb := path.Join .Dir "thumb.jpg"}}
+                                {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
                                 {{ if (fileExists $thumb) -}}
                                 <img src="{{ $thumb  | absURL }}">
                                 {{ else }}
