@@ -21,7 +21,8 @@
                                 {{ $thumb := path.Join .Dir "thumb.jpg"}}
                                 {{ if (fileExists $thumb) -}}
                                 <img src="{{ $thumb  | absURL }}">
-                                {{ }}
+                                {{ else }}
+                                <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
                                 {{- end }}
                                 <!-- <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg"> -->
                             </a>
