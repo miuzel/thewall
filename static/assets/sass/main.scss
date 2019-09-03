@@ -246,7 +246,6 @@
 	}
 
 /* Wrapper */
-
 	#wrapper {
 		min-height: 100vh;
 		@include vendor('display', 'flex');
@@ -311,7 +310,7 @@
 		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
 		padding: ($border * 0.5);
-
+		background:rgba(255,255,255,0.6);
 		.items {
 			@include vendor('display', 'flex');
 
@@ -320,6 +319,87 @@
 			}
 		}
 
+
+		.stickynote {
+			margin: ($border * 0.5);
+			$width: 15em;
+			height: 15em;
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			background: #ffffff;
+			box-shadow: -5px 5px 8px 2px #999;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			overflow-y:hidden;
+			&.rotate-1 {
+				transform: rotate(1deg) rotateX(20deg);
+			}
+			&.rotate-2 {
+				transform: rotate(-1deg) rotateX(20deg);
+			}
+			&.rotate-3 {
+				transform: rotate(-0.1deg) rotateX(20deg);
+			}
+			&.rotate-4 {
+				transform: rotate(0.5deg) rotateX(20deg);
+			}
+			&.span-1 {
+				width: $width;
+			}
+			&.span-2 {
+				width: $width * 1.1;
+			}
+			&.span-3 {
+				width: $width * 1.2;
+			}
+			&.span-4 {
+				width: $width * 1.5;
+			}
+			&.intro {
+				background-color: #d64760;
+				background-image: url('images/overlay.png');
+				@include vendor('display', 'flex');
+				@include vendor('flex-direction', 'column');
+				@include vendor('justify-content', 'center');
+				padding: 1em 3em;
+
+				h1 {
+					font-size: 3em;
+					line-height: 1em;
+				}
+				h2 {
+					font-size: 1.25em;
+					line-height: 1.5em;
+					color: #fff;
+					padding:0;
+					text-align: left;
+				}
+
+				p {
+					font-size: 1.25em;
+					line-height: 1.5em;
+					margin: 0.5em 0 0 0;
+					opacity: 0.65;
+					padding:0;
+					color: #fff;
+					text-align: left;
+				}
+			}
+			h2 {
+				color: #333;
+				padding: 0.5em;
+				font-size: 1.2em;
+				background: rgba(100,100,100,0.05);
+				margin:0;
+				text-align: center;
+			}
+			p {
+				color: #333;
+				padding: 1em;
+				font-size:1.2em;
+				text-align: center;
+				margin:0;
+			}
+		}
 		.item {
 			$width: 20em;
 
@@ -327,6 +407,7 @@
 			@include vendor('flex-shrink', '0');
 			margin: ($border * 0.5);
 			height: 10em;
+			background: #ffffff;
 			box-shadow: 0 0 0 $border #ffffff;
 
 			&.span-1 {
@@ -334,11 +415,14 @@
 			}
 
 			&.span-2 {
-				width: $width * 1.5;
+				width: $width * 1.1;
 			}
 
 			&.span-3 {
-				width: $width * 2;
+				width: $width * 1.2;
+			}
+			&.span-4 {
+				width: $width * 1.5;
 			}
 
 			&.intro {
@@ -367,7 +451,7 @@
 				position: relative;
 				background: rgba(255, 255, 255, 0.25);
 				cursor: default;
-
+				overflow-y: hidden;
 				h2 {
 					position: absolute;
 					bottom: 0;
@@ -377,7 +461,7 @@
 					padding: 1em;
 					font-weight: 400;
 					line-height: 1em;
-					z-index: 2;
+					z-index: 3;
 				}
 
 				img {
@@ -394,6 +478,18 @@
 					@include vendor('transition-delay', '1.25s');
 				}
 
+				p {
+					z-index: 2;
+					margin: 1em;
+					font-size: 1.4em;
+					font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+					position: absolute;
+				}
+				time {
+					right: 0;    
+					position: absolute;
+					margin-right: 1em;
+				}
 				@for $i from 1 through 6 {
 					&.delay-#{$i} {
 						img {
@@ -427,11 +523,14 @@
 				}
 
 				&.span-2 {
-					width: $width * 1.5;
+					width: $width * 1.1;
 				}
 
 				&.span-3 {
-					width: $width * 2;
+					width: $width * 1.2;
+				}
+				&.span-4 {
+					width: $width * 1.5;
 				}
 			}
 		}
