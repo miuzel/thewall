@@ -3,23 +3,23 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
         {{- block "main" . }}
         <!-- Items -->
         <div class="items">
             <div class="stickynote intro span-4">
-        {{ .Content }}
+            {{ .Content }}
+            <div class="home"> <a href="/" class="fas fa-arrow-circle-left"><span class="label"> 返回</span></a></div>
              </div>
-             {{ $data :=  getCSV "\t" (string .Params.data) }}
+             {{ $data :=  getCSV "," (string .Params.data) }}
              {{ range $i, $r := $data}}
              {{ if eq 0 (mod $i 3)}}
-             <article 
+             <a class="pop" href='/images/fulls/01.jpg'><article 
              {{ $seed := strings.RuneCount (index $r 3)}}
-             style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 23) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(255,222,222,1) 98%, rgba(255,244,244,1) 100%);"
+             style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 23) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(233,222,222,1) 98%, rgba(244,244,244,1) 100%);"
              class="stickynote thumb rotate-{{ add 1 (mod (mul (div $i 3) 17) 4 ) }} span-{{ add 1 (mod  $seed 3 ) }}">
                      <h2>{{ index $r 2 }}</h2>
                      <p>{{ index $r 3 }}</p>
-             </article>
+             </article></a>
              {{ end }}
             {{ end }}
         </div>
@@ -27,32 +27,33 @@
         <div class="items">
                 {{ range $i, $r := $data}}
                 {{ if eq 1 (mod $i 3)}}
-                <article 
+                
+             <a class="pop" href='/images/fulls/01.jpg'><article 
                 {{ $seed := strings.RuneCount (index $r 3)}}
-                style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 23) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(255,222,222,1) 98%, rgba(255,244,244,1) 100%);"
+                style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(233,222,222,1) 98%, rgba(244,244,244,1) 100%);"
                 class="stickynote thumb rotate-{{ add 1 (mod (mul (div $i 3) 29) 4 ) }} span-{{ add 1 (mod  $seed 3 ) }}">
                         <h2>{{ index $r 2 }}</h2>
                         <p>{{ index $r 3 }}</p>
-                </article>
+                </article></a>
                 {{ end }}
             {{ end }}
         </div>
         <div class="items">
                 {{ range $i, $r := $data}}
                 {{ if eq 2 (mod $i 3)}}
-                <article 
+                
+             <a class="pop" href='/images/fulls/01.jpg'><article 
                 {{ $seed := strings.RuneCount (index $r 3)}}
-                style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 23) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(255,222,222,1) 98%, rgba(255,244,244,1) 100%);"
+                style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 23) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(233,222,222,1) 98%, rgba(244,244,244,1) 100%);"
                 class="stickynote thumb rotate-{{ add 1 (mod (mul (div $i 3) 13) 4 ) }} span-{{ add 1 (mod  $seed 3 ) }}">
                         <h2>{{ index $r 2 }}</h2>
                         <p>{{ index $r 3 }}</p>
-                </article>
+                </article></a>
                 {{ end }}
             {{ end }}
         </div>
     
         {{- end }}
-        </div>
         {{- partial "footer.html" . -}}
     </body>
 </html>

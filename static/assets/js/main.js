@@ -89,7 +89,11 @@
 	// Items.
 
 		// Assign a random "delay" class to each thumbnail item.
-			$('.item.thumb').each(function() {
+		$('.item.thumb').each(function() {
+			$(this).addClass('delay-' + Math.floor((Math.random() * 6) + 1));
+		});
+		// Assign a random "delay" class to each thumbnail item.
+			$('.stickynote.thumb').each(function() {
 				$(this).addClass('delay-' + Math.floor((Math.random() * 6) + 1));
 			});
 
@@ -118,9 +122,9 @@
 			overlayOpacity: 0.75,
 			popupCloserText: '',
 			popupLoaderText: '',
-			selector: '.item.thumb a.image',
+			selector: 'a.pop',
 			caption: function($a) {
-				return $a.prev('h2').html();
+				return $a.html();
 			},
 			usePopupDefaultStyling: false,
 			usePopupCloser: false,

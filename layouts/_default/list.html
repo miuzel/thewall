@@ -3,28 +3,43 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
             <!-- Items -->
             <div class="items">
                 <div class="item intro span-2">
-                    <h1>Parallelism</h1>
-                    <p>A responsive portfolio site<br />
-                    template by HTML5 UP</p>
+                    <h1>{{ .Site.Title }}</h1>
+                    <p>{{ .Site.Params.description}}</p>
                 </div>
                 {{ $paginator := .Paginate (where .Pages "Type" "posts") 5  }}
                 
                     {{ range $index, $page := $paginator.Pages }}
-                    <article class="item thumb span-{{ add 1 (mod (mul $index 17) 3 ) }}">
-                    <h2>{{ .Title }}  
-                        <time>{{ .Date.Format "2006-01-02" }}</time>
-                    </h2>
-                    <p>{{ .Summary }}...</p>
-                    <a class="link" href="{{ .Permalink }}"><img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg" alt=""></a>
-                    </article>
+                        {{ if eq 0 (mod $index 2)}}
+                        <article class="item thumb span-{{ add 1 (mod (mul $index 23) 3 ) }}">
+                            <a class="link" href="{{ .Permalink }}">
+                                <h2>{{ .Title }}
+                                    <time>{{ .Date.Format "2006-01-02" }}</time>
+                                </h2>
+                                <!-- <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg"> -->
+                                <img src="{{ .Params.thumb }}">
+                            </a>
+                        </article>
+                        {{ end }}
                     {{ end }}
             </div>
+            <div class="items">
+                    
+                {{ range $index, $page := $paginator.Pages }}
+                    {{ if eq 1 (mod $index 2)}}
+                    <article class="item thumb span-{{ add 1 (mod (mul $index 29) 3 ) }}">
+                        <a class="link" href="{{ .Permalink }}">
+                    <h2>{{ .Title }}  
+                        <time>{{ .Date.Format "2006-01-02" }}</time>
+                    </h2><img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg" alt=""></a>
 
-        </div>
+                    </article>
+                    {{ end }}
+                {{ end }}
+            </div>
+
         
 						
         {{ if gt $paginator.TotalPages 1 }}

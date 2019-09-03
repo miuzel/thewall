@@ -323,9 +323,6 @@ body.is-poptrox-visible #wrapper {
   display: -ms-flex;
   display: flex;
 }
-#main .items > :last-child {
-  border-right: solid 10px #ffffff;
-}
 #main .stickynote {
   margin: 5px;
   height: 15em;
@@ -381,18 +378,29 @@ body.is-poptrox-visible #wrapper {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  padding: 1em 3em;
+  padding: 1em 2.2em;
+  transform: rotate(-1deg) rotateX(20deg);
 }
 #main .stickynote.intro h1 {
-  font-size: 3em;
+  font-size: 2.2em;
   line-height: 1em;
 }
 #main .stickynote.intro h2 {
   font-size: 1.25em;
   line-height: 1.5em;
+  background: none;
   color: #fff;
   padding: 0;
   text-align: left;
+}
+#main .stickynote.intro .home {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  font-size: 1.5em;
+}
+#main .stickynote.intro a:hover {
+  color: #222;
 }
 #main .stickynote.intro p {
   font-size: 1.25em;
@@ -413,10 +421,11 @@ body.is-poptrox-visible #wrapper {
 }
 #main .stickynote p {
   color: #333;
-  padding: 1em;
   font-size: 1.2em;
   text-align: center;
-  margin: 0;
+  max-height: 8.9em;
+  overflow: hidden;
+  margin: 0.5em;
 }
 #main .item {
   -moz-flex-grow: 0;
@@ -459,10 +468,10 @@ body.is-poptrox-visible #wrapper {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  padding: 1em 3em;
+  padding: 1em 2.2em;
 }
 #main .item.intro h1 {
-  font-size: 3em;
+  font-size: 2.2em;
   line-height: 1em;
 }
 #main .item.intro p {
@@ -622,7 +631,7 @@ body.is-preload #main .item.thumb img {
     width: calc(100vw - 20px) !important;
     text-align: center;
     height: auto;
-    padding: 3em;
+    padding: 2.2em;
   }
   #main .item.intro h1 {
     font-size: 2em;
@@ -725,7 +734,6 @@ body.is-preload #main .item.thumb img {
 .poptrox-popup {
   background: #1a1f2c;
   background: rgba(18, 21, 29, 0.9);
-  box-shadow: 0px 0px 0px 10px #fff, 0px 10px 60px 10px rgba(8, 11, 19, 0.55);
   cursor: default;
 }
 .poptrox-popup .loader {
@@ -741,16 +749,44 @@ body.is-preload #main .item.thumb img {
 }
 .poptrox-popup .caption {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   background: #1a1f2c;
-  background: rgba(18, 21, 29, 0.85);
   display: block;
   width: 100%;
-  line-height: 75px;
+  line-height: 1.5em;
   text-align: center;
   font-size: 1.25em;
-  color: #fff;
+  height: 100%;
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -moz-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  background: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: auto;
+}
+.poptrox-popup .caption article {
+  min-height: 399px;
+}
+.poptrox-popup .caption h2 {
+  color: #333;
+  padding: 0.5em;
+  font-size: 1.2em;
+  background: rgba(100, 100, 100, 0.05);
+  margin: 0;
+  text-align: center;
+}
+.poptrox-popup .caption p {
+  color: #333;
+  padding: 1em;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 0;
 }
 .poptrox-popup .nav-next, .poptrox-popup .nav-previous {
   text-decoration: none;
@@ -769,12 +805,11 @@ body.is-preload #main .item.thumb img {
   text-decoration: none;
   text-transform: none !important;
   width: 150px;
-  height: 75px;
+  line-height: 1.2em;
   position: absolute;
-  bottom: 0;
+  top: 0;
   cursor: pointer;
   font-size: 3em;
-  line-height: 75px;
 }
 .poptrox-popup .nav-next:before, .poptrox-popup .nav-previous:before {
   -moz-osx-font-smoothing: grayscale;
@@ -792,6 +827,7 @@ body.is-preload #main .item.thumb img {
   right: 0;
   text-align: right;
   padding-right: 30px;
+  color: #333;
 }
 .poptrox-popup .nav-next:before {
   content: "";
@@ -800,6 +836,7 @@ body.is-preload #main .item.thumb img {
   left: 0;
   text-align: left;
   padding-left: 30px;
+  color: #333;
 }
 .poptrox-popup .nav-previous:before {
   content: "";
