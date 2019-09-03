@@ -10,7 +10,7 @@
             {{ .Content }}
             <div class="home"> <a href="/" class="fas fa-arrow-circle-left"><span class="label"> 返回</span></a></div>
              </div>
-             {{ $csv :=  path.Join .Dir "data.csv"}}
+             {{ $csv := path.Join "content/" (path.Join .File.Dir "data.csv")}}
              {{ $data :=  getCSV "," $csv }}
              {{ range $i, $r := $data}}
              {{ if eq 0 (mod $i 3)}}
