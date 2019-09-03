@@ -10,7 +10,8 @@
             {{ .Content }}
             <div class="home"> <a href="/" class="fas fa-arrow-circle-left"><span class="label"> 返回</span></a></div>
              </div>
-             {{ $data :=  getCSV "," (string .Params.data) }}
+             {{ $csv :=  path.Join .Dir "data.csv"}}
+             {{ $data :=  getCSV "," $csv }}
              {{ range $i, $r := $data}}
              {{ if eq 0 (mod $i 3)}}
              <a class="pop" href='/images/fulls/01.jpg'><article 
