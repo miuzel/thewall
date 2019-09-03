@@ -4,97 +4,28 @@
     <body>
         {{- partial "header.html" . -}}
         <div id="content">
-            {{ $paginator := .Paginate (where .Pages "Type" "posts") 5  }}
-
-            {{ if gt $paginator.TotalPages 0 }}
-            {{ range $index, $page := $paginator.Pages }}
-            <article class="{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}first-entry{{ else }}post-entry{{ end }}">
-            <header class="entry-header">
-                <h2>{{ .Title }}</h2>
-            </header>
-            <section class="entry-content">
-            <p>{{ .Summary | plainify | htmlUnescape }}...</p>
-            </section>
-            <footer class="entry-footer">
-                <time>{{ .Date.Format "January 2, 2006" }}</time>
-            </footer>
-            <a class="entry-link" href="{{ .Permalink }}"></a>
-            </article>
-            {{ end }}
-            {{ end }}
-        {{- block "main" . }}
-        
             <!-- Items -->
             <div class="items">
-
                 <div class="item intro span-2">
                     <h1>Parallelism</h1>
                     <p>A responsive portfolio site<br />
                     template by HTML5 UP</p>
                 </div>
-
-                <article class="item thumb span-1">
-                    <h2>You really got me</h2>
-                    <p>A responsive portfolio site<br />
-                    template by HTML5 UP</p>
-                    <a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-2">
-                    <h2>Ad Infinitum</h2>
-                    <a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-1">
-                    <h2>Different.</h2>
-                    <a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-1">
-                    <h2>Elysium</h2>
-                    <a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-3">
-                    <h2>Kingdom of the Wind</h2>
-                    <a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-1">
-                    <h2>The Pursuit</h2>
-                    <a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-2">
-                    <h2>Boundless</h2>
-                    <a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a>
-                </article>
-
-                <article class="item thumb span-2">
-                    <h2>The Spectators</h2>
-                    <a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a>
-                </article>
-
-            </div>
-
-        <!-- Items -->
-            <div class="items">
-
-                <article class="item thumb span-3"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-                <article class="item thumb span-1"><h2>The Pursuit</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
-                <article class="item thumb span-2"><h2>Boundless</h2><a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a></article>
-                <article class="item thumb span-2"><h2>The Spectators</h2><a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a></article>
-                <article class="item thumb span-1"><h2>You really got me</h2><a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a></article>
-                <article class="item thumb span-2"><h2>Ad Infinitum</h2><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
-                <article class="item thumb span-1"><h2>Different.</h2><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
-                <article class="item thumb span-2"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-                <article class="item thumb span-1"><h2>Elysium</h2><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
-
+                {{ $paginator := .Paginate (where .Pages "Type" "posts") 5  }}
+                
+                    {{ range $index, $page := $paginator.Pages }}
+                    <article class="item thumb span-{{ add 1 (mod (mul $index 17) 3 ) }}">
+                    <h2>{{ .Title }}  
+                        <time>{{ .Date.Format "2006-01-02" }}</time>
+                    </h2>
+                    <p>{{ .Summary }}...</p>
+                    <a class="link" href="{{ .Permalink }}"><img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg" alt=""></a>
+                    </article>
+                    {{ end }}
             </div>
 
         </div>
         
-        {{- end }}
 						
         {{ if gt $paginator.TotalPages 1 }}
         <footer class="page-footer">
