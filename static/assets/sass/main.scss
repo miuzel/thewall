@@ -801,16 +801,5 @@
 			border: solid 2.5px #fff;
 			@include vendor('box-sizing', 'content-box');
 
-			.caption {
-				display: none !important;
-			}
-
-			.nav-next {
-				display: none !important;
-			}
-
-			.nav-previous {
-				display: none !important;
-			}
 		}
 	}
