@@ -366,6 +366,7 @@ body.is-poptrox-visible #wrapper {
 #main .stickynote.intro {
   background-color: #b9ecff;
   background-image: url("images/overlay.png");
+  color: #333;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
