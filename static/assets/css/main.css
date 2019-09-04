@@ -364,7 +364,7 @@ body.is-poptrox-visible #wrapper {
   width: 22.5em;
 }
 #main .stickynote.intro {
-  background-color: #d64760;
+  background-color: #b9ecff;
   background-image: url("images/overlay.png");
   display: -moz-flex;
   display: -webkit-flex;
@@ -454,8 +454,9 @@ body.is-poptrox-visible #wrapper {
   width: 30em;
 }
 #main .item.intro {
-  background-color: #d64760;
+  background-color: #b9ecff;
   background-image: url("images/overlay.png");
+  color: #333;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
