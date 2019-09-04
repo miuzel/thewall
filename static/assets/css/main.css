@@ -366,7 +366,6 @@ body.is-poptrox-visible #wrapper {
 #main .stickynote.intro {
   background-color: #b9ecff;
   background-image: url("images/overlay.png");
-  color: #333;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -384,13 +383,14 @@ body.is-poptrox-visible #wrapper {
 }
 #main .stickynote.intro h1 {
   font-size: 2.2em;
+  color: #333;
   line-height: 1em;
 }
 #main .stickynote.intro h2 {
   font-size: 1.25em;
+  color: #333;
   line-height: 1.5em;
   background: none;
-  color: #fff;
   padding: 0;
   text-align: left;
 }
@@ -401,7 +401,7 @@ body.is-poptrox-visible #wrapper {
   font-size: 1.5em;
 }
 #main .stickynote.intro a:hover {
-  color: #222;
+  color: #666;
 }
 #main .stickynote.intro p {
   font-size: 1.25em;
@@ -409,7 +409,7 @@ body.is-poptrox-visible #wrapper {
   margin: 0.5em 0 0 0;
   opacity: 0.65;
   padding: 0;
-  color: #fff;
+  color: #333;
   text-align: left;
 }
 #main .stickynote h2 {
@@ -457,7 +457,6 @@ body.is-poptrox-visible #wrapper {
 #main .item.intro {
   background-color: #b9ecff;
   background-image: url("images/overlay.png");
-  color: #333;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -475,12 +474,17 @@ body.is-poptrox-visible #wrapper {
 #main .item.intro h1 {
   font-size: 2.2em;
   line-height: 1em;
+  color: #333;
+}
+#main .item.intro h2 {
+  color: #333;
 }
 #main .item.intro p {
   font-size: 1.25em;
   line-height: 1.5em;
   margin: 0.5em 0 0 0;
   opacity: 0.65;
+  color: #333;
 }
 #main .item.thumb {
   display: block;
