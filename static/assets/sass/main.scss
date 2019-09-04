@@ -355,7 +355,8 @@
 				width: $width * 1.5;
 			}
 			&.intro {
-				background-color: #d64760;
+				//background-color: #d64760;
+				background-color: rgb(185,236,255);
 				background-image: url('images/overlay.png');
 				@include vendor('display', 'flex');
 				@include vendor('flex-direction', 'column');
@@ -438,8 +439,10 @@
 			}
 
 			&.intro {
-				background-color: #d64760;
+				//background-color: #d64760;
+				background-color: rgb(185,236,255);
 				background-image: url('images/overlay.png');
+				color: #333;
 				@include vendor('display', 'flex');
 				@include vendor('flex-direction', 'column');
 				@include vendor('justify-content', 'center');
