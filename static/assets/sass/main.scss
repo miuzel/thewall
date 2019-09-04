@@ -358,6 +358,7 @@
 				//background-color: #d64760;
 				background-color: rgb(185,236,255);
 				background-image: url('images/overlay.png');
+				color: #333;
 				@include vendor('display', 'flex');
 				@include vendor('flex-direction', 'column');
 				@include vendor('justify-content', 'center');
