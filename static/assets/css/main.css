@@ -851,15 +851,6 @@ body.is-preload #main .item.thumb img {
     -ms-box-sizing: content-box;
     box-sizing: content-box;
   }
-  .poptrox-popup .caption {
-    display: none !important;
-  }
-  .poptrox-popup .nav-next {
-    display: none !important;
-  }
-  .poptrox-popup .nav-previous {
-    display: none !important;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
