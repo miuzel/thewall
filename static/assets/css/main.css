@@ -400,8 +400,11 @@ body.is-poptrox-visible #wrapper {
   top: 1em;
   font-size: 1.5em;
 }
+#main .stickynote.intro a {
+  color: #336;
+}
 #main .stickynote.intro a:hover {
-  color: #666;
+  color: #669;
 }
 #main .stickynote.intro p {
   font-size: 1.25em;
