@@ -649,7 +649,12 @@ body.is-preload #main .item.thumb img {
     font-size: 1em;
   }
   #main .item.thumb h2 {
-    display: none;
+    font-size: 1em;
+    line-height: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.2em;
   }
 }
 @media screen and (max-width: 480px) {

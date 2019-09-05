@@ -16,7 +16,7 @@
                         <article class="item thumb span-{{ add 1 (mod (mul $index 23) 3 ) }}">
                             <a class="link" href="{{ .Permalink }}">
                                 <h2>{{ .Title }}
-                                    <time>{{ .Date.Format "2006-01-02" }}</time>
+                                    <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
                                 </h2>
                                 {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
                                 {{ if (fileExists $thumb) -}}
@@ -37,7 +37,7 @@
                     <article class="item thumb span-{{ add 1 (mod (mul $index 29) 3 ) }}">
                         <a class="link" href="{{ .Permalink }}">
                     <h2>{{ .Title }}  
-                        <time>{{ .Date.Format "2006-01-02" }}</time>
+                        <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
                     </h2>
                     
                     {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
