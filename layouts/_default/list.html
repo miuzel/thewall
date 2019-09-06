@@ -9,7 +9,7 @@
                     <h1>{{ .Site.Title }}</h1>
                     <p>{{ .Site.Params.description}}</p>
                 </div>
-                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 50 }}
+                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 20 }}
                 
                     {{ range $index, $page := $paginator.Pages }}
                         {{ if eq 1 (mod $index 2)}}
