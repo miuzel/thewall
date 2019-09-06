@@ -13,7 +13,7 @@
              {{ $csv := path.Join "content/" (path.Join .Dir "data.csv")}}
              {{ $data :=  getCSV "," $csv }}
              {{ range $i, $r := $data}}
-             {{ if eq 0 (mod $i 3)}}
+             {{ if eq 2 (mod $i 3)}}
              <a class="pop" href='/images/fulls/01.jpg'><article 
              {{ $seed := strings.RuneCount (index $r 3)}}
              style="background: linear-gradient(110deg, rgba({{add 150 (mod (mul $seed 23) 100)}},{{add 150 (mod (mul $seed 29) 100)}},{{add 150 (mod (mul $seed 17) 100)}},1) 0%, rgba(233,222,222,1) 98%, rgba(244,244,244,1) 100%);"
@@ -41,7 +41,7 @@
         </div>
         <div class="items">
                 {{ range $i, $r := $data}}
-                {{ if eq 2 (mod $i 3)}}
+                {{ if eq 0 (mod $i 3)}}
                 
              <a class="pop" href='/images/fulls/01.jpg'><article 
                 {{ $seed := strings.RuneCount (index $r 3)}}

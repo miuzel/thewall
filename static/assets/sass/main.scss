@@ -3,7 +3,7 @@
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
 @import url('fontawesome-all.min.css');
 
 /*
@@ -138,7 +138,7 @@
 	}
 
 	body, input, select, textarea {
-		font-family: 'Source Sans Pro';
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		font-weight: 400;
 		padding: 0;
 		font-size: 13pt;
@@ -482,10 +482,14 @@
 					left: 0;
 					background: rgba(18, 21, 29, 0.85);
 					width: 100%;
-					padding: 1em;
+					padding: 0.5em;
 					font-weight: 400;
 					line-height: 1em;
 					z-index: 3;
+					
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 
 				img {
@@ -712,6 +716,26 @@
 	}
 
 /* Popup */
+
+.pagination {
+	display: flex;
+  }
+  .pagination a {
+	color: #333;
+	font-family: 'Font Awesome 5 Free','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin-top:0.5em;
+  }
+  .pagination .prev {
+	padding-left: 1em;
+	padding-right: 1em;
+  }
+  .pagination .next {
+	margin-left: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+  }
 
 	.poptrox-popup {
 		background: #1a1f2c;
