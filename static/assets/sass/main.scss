@@ -125,9 +125,6 @@
 				}
 			}
 		
-		&.home {
-			@include vendor('background-image', ('url("images/overlay.png")', 'linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65))', 'url("../../images/bg-wall.jpg")'));
-		}
 		@include breakpoint('<=large') {
 			background-attachment: scroll;
 		}

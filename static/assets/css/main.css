@@ -105,12 +105,6 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   -ms-transition: none !important;
   transition: none !important;
 }
-body.home {
-  background-image: url("images/overlay.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg-wall.jpg");
-  background-image: url("images/overlay.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg-wall.jpg");
-  background-image: url("images/overlay.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg-wall.jpg");
-  background-image: url("images/overlay.png"), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url("../../images/bg-wall.jpg");
-}
 @media screen and (max-width: 1280px) {
   body {
     background-attachment: scroll;
