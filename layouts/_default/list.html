@@ -7,7 +7,7 @@
             <div class="items">
                 <div class="item intro span-2">
                     <h1>{{ .Site.Title }}</h1>
-                    <p>{{ .Site.Params.description}}</p>
+                    <p>{{ .Site.Params.description }}</p>
                 </div>
                 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 20 }}
                 
