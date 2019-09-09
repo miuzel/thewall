@@ -295,7 +295,7 @@
 								return;
 
 						// Prevent default.
-							event.preventDefault();
+							// passive event.preventDefault();
 							event.stopPropagation();
 
 						// Stop link scroll.
