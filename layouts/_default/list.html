@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body style="background-image: url(/assets/css/images/overlay.png), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);">
+    <body style="
+  background-image: url(/assets/css/images/overlay.png), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);
+  background-image: url(/assets/css/images/overlay.png), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)),url(/images/bg-wall.jpg);
+  background-image: url(/assets/css/images/overlay.png), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);
+  background-image: url(/assets/css/images/overlay.png), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)),url(/images/bg-wall.jpg);
+   ">
         {{- partial "header.html" . -}}
             <!-- Items -->
             <div class="items">
