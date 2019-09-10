@@ -25,4 +25,22 @@
                 <script src="/assets/js/breakpoints.min.js"></script>
                 <script src="/assets/js/util.js"></script>
                 <script src="/assets/js/main.js"></script>
+
+                <script>
+                // Your web app's Firebase configuration
+                var performance_standalone = "/assets/js/firebase-performance-standalone.js"
+                var firebaseConfig = {
+                    apiKey: "{{ .Site.Params.FirebaseAPIKey }}",
+                    authDomain: "{{ .Site.Params.FirebaseApp }}.firebaseapp.com",
+                    databaseURL: "https://{{ .Site.Params.FirebaseApp }}.firebaseio.com",
+                    projectId: "{{ .Site.Params.FirebaseApp }}",
+                    storageBucket: "{{ .Site.Params.FirebaseStorageBucket }}",
+                    messagingSenderId: "{{ .Site.Params.FirebaseSenderId }}",
+                    appId: "{{ .Site.Params.FirebaseAppId }}"
+                };
+                (function(sa,fbc){function load(f,c){var a=document.createElement('script');
+                a.async=1;a.src=f;var s=document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(a,s);}load(sa);window.onload = function() {firebase.initializeApp(fbc).performance();};
+                })(performance_standalone, firebaseConfig);
+                </script>
     
