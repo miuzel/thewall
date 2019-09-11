@@ -180,6 +180,10 @@ ul.icons li {
 ul.icons li span {
   display: none;
 }
+ul.icons li img {
+  top: 0.3em;
+  position: relative;
+}
 ul.icons li a {
   opacity: 0.35;
   color: #fff;
