@@ -488,9 +488,13 @@ body.is-poptrox-visible #wrapper {
   opacity: 0.65;
   color: #333;
 }
+#main .item.thumb:hover img {
+  transform: scale(1.38) translateX(1em) translateY(0.8em);
+}
 #main .item.thumb {
   display: block;
   position: relative;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.25);
   cursor: default;
   overflow-y: hidden;
@@ -529,10 +533,7 @@ body.is-poptrox-visible #wrapper {
   -webkit-transition: opacity 0.75s ease-in-out;
   -ms-transition: opacity 0.75s ease-in-out;
   transition: opacity 0.75s ease-in-out;
-  -moz-transition-delay: 1.25s;
-  -webkit-transition-delay: 1.25s;
-  -ms-transition-delay: 1.25s;
-  transition-delay: 1.25s;
+  transition: all 10s;
 }
 #main .item.thumb p {
   z-index: 2;
@@ -545,42 +546,6 @@ body.is-poptrox-visible #wrapper {
   right: 0;
   position: absolute;
   margin-right: 1em;
-}
-#main .item.thumb.delay-1 img {
-  -moz-transition-delay: 1.375s;
-  -webkit-transition-delay: 1.375s;
-  -ms-transition-delay: 1.375s;
-  transition-delay: 1.375s;
-}
-#main .item.thumb.delay-2 img {
-  -moz-transition-delay: 1.5s;
-  -webkit-transition-delay: 1.5s;
-  -ms-transition-delay: 1.5s;
-  transition-delay: 1.5s;
-}
-#main .item.thumb.delay-3 img {
-  -moz-transition-delay: 1.625s;
-  -webkit-transition-delay: 1.625s;
-  -ms-transition-delay: 1.625s;
-  transition-delay: 1.625s;
-}
-#main .item.thumb.delay-4 img {
-  -moz-transition-delay: 1.75s;
-  -webkit-transition-delay: 1.75s;
-  -ms-transition-delay: 1.75s;
-  transition-delay: 1.75s;
-}
-#main .item.thumb.delay-5 img {
-  -moz-transition-delay: 1.875s;
-  -webkit-transition-delay: 1.875s;
-  -ms-transition-delay: 1.875s;
-  transition-delay: 1.875s;
-}
-#main .item.thumb.delay-6 img {
-  -moz-transition-delay: 2s;
-  -webkit-transition-delay: 2s;
-  -ms-transition-delay: 2s;
-  transition-delay: 2s;
 }
 body.is-preload #main {
   opacity: 0;

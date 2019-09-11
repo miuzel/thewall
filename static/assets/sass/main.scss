@@ -469,10 +469,15 @@
 					color: #333;
 				}
 			}
-
+			&.thumb:hover {
+				img {
+					transform: scale(1.38) translateX(1em) translateY(0.8em);
+				}
+			}
 			&.thumb {
 				display: block;
 				position: relative;
+				overflow: hidden;
 				background: rgba(255, 255, 255, 0.25);
 				cursor: default;
 				overflow-y: hidden;
@@ -503,7 +508,8 @@
 					@include vendor('object-fit', 'cover');
 					@include vendor('object-position', 'center');
 					@include vendor('transition', 'opacity 0.75s ease-in-out');
-					@include vendor('transition-delay', '1.25s');
+					transition: all 10s;
+					//@include vendor('transition-delay', '1.25s');
 				}
 
 				p {
@@ -521,7 +527,7 @@
 				@for $i from 1 through 6 {
 					&.delay-#{$i} {
 						img {
-							@include vendor('transition-delay', '#{1.25 + ($i * 0.125)}s');
+							//@include vendor('transition-delay', '#{1.25 + ($i * 0.125)}s');
 						}
 					}
 				}
