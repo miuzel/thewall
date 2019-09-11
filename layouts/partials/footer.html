@@ -5,14 +5,13 @@
                         <section id="footer">
                             <section>
                                 <p>这里是 <strong>{{ .Site.Title }}</strong> 以 <a href="https://gohugo.io">HUGO</a> 搭建，感谢 <a href="http://html5up.net">HTML5 UP</a>提供的页面母版, 基于 <strong>Parallelism</strong> 修改，受<a href="http://html5up.net/license">Creative Commons Attribution</a>证书保护</p>
-                                <p>&copy; {{ .Site.Title }} </p>
+                                
                             </section>
                             <section>
                                 
-                                    <p>友情链接：</p>
                                 <ul class="icons">
                                         <li> 
-                                            <a href="{{ .Site.Params.friendlyLink }}" class="">
+                                            <a href="{{ .Site.Params.friendlyLink }}" class="friend">
                                                 <img src="{{ .Site.Params.friendlyLinkImg }}">
                                             </a>
                                         </li>
@@ -22,6 +21,7 @@
                                             </a>
                                         </li>
                                 </ul>
+                                <p>&copy; {{ .Site.Title }} </p>
                             </section>
                         </section>
     
