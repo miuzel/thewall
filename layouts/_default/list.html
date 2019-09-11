@@ -17,7 +17,7 @@
                 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 20 }}
                 
                     {{ range $index, $page := $paginator.Pages }}
-                        {{ if eq 1 (mod $index 2)}}
+                        {{ if lt $index (div $paginator.PageSize 2)}}
                         <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 23) 3 ) }}">
                             <a class="link" href="{{ .Permalink }}">
                                 <h2>{{ .Title }}
@@ -38,7 +38,7 @@
             <div class="items">
                     
                 {{ range $index, $page := $paginator.Pages }}
-                    {{ if eq 0 (mod $index 2)}}
+                    {{ if ge $index (div $paginator.PageSize 2)}}
                     <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 29) 3 ) }}">
                         <a class="link" href="{{ .Permalink }}">
                     <h2>{{ .Title }}  

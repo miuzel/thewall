@@ -721,6 +721,7 @@
 	display: flex;
   }
   .pagination a {
+	position: fixed;
 	color: #333;
 	font-family: 'Font Awesome 5 Free','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 1.2em;
@@ -728,13 +729,13 @@
 	margin-top:0.5em;
   }
   .pagination .prev {
-	padding-left: 1em;
+	left: 4em;
 	padding-right: 1em;
   }
   .pagination .next {
 	margin-left: auto;
 	padding-left: 1em;
-	padding-right: 1em;
+	right: 4em;
   }
 
 	.poptrox-popup {
