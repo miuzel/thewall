@@ -653,6 +653,7 @@ body.is-preload #main .item.thumb img {
   text-align: left;
   max-width: 36em;
   padding-right: 2em;
+  vertical-align: bottom;
 }
 #footer > section:last-child {
   text-align: right;
