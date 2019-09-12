@@ -41,7 +41,7 @@
 						enabled: true,
 
 					// Sets the speed at which the page scrolls when a scroll zone is active (higher = faster scroll, lower = slower scroll).
-						speed: 15
+						speed: 8
 
 				}
 
@@ -345,7 +345,7 @@
 
 							intervalId = setInterval(function() {
 								$main.scrollLeft($main.scrollLeft() + (settings.scrollZones.speed * direction));
-							}, 25);
+							}, 1000/62);
 
 					},
 					deactivate = function() {
