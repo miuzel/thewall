@@ -13,6 +13,13 @@
                 <div class="item intro span-2">
                     <h1>{{ .Site.Title }}</h1>
                     <p>{{ .Site.Params.description }}</p>
+                    {{ if .IsTranslated }}
+                        <div class="LangNav">
+                        {{ range .Translations }}
+                            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                        {{ end}}
+                        </div>
+                    {{ end }}
                 </div>
                 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 20 }}
                 

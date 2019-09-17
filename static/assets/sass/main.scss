@@ -403,6 +403,17 @@
 					color: #333;
 					text-align: left;
 				}
+				.LangNav {
+					position: absolute;
+					right:0.7em;
+					bottom: 0em;
+					a {
+						font-size: 0.7em;
+					}
+					a:hover {
+						font-size: 0.7em;
+					}
+				}
 			}
 			h2 {
 				color: #333;
@@ -455,6 +466,7 @@
 				@include vendor('flex-direction', 'column');
 				@include vendor('justify-content', 'center');
 				padding: 1em 2.2em;
+				transform: rotate(0deg) ;
 
 				h1 {
 					font-size: 2.2em;
@@ -472,6 +484,19 @@
 					margin: 0.5em 0 0 0;
 					opacity: 0.65;
 					color: #333;
+				}
+				.LangNav {
+					position: absolute;
+					right:0.7em;
+					bottom: 0em;
+					a {
+						font-size: 0.7em;
+						color: #336;
+					}
+					a:hover {
+						font-size: 0.7em;
+						color: #669;
+					}
 				}
 			}
 			&.thumb:hover {

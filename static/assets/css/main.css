@@ -418,6 +418,17 @@ body.is-poptrox-visible #wrapper {
   color: #333;
   text-align: left;
 }
+#main .stickynote.intro .LangNav {
+  position: absolute;
+  right: 0.7em;
+  bottom: 0em;
+}
+#main .stickynote.intro .LangNav a {
+  font-size: 0.7em;
+}
+#main .stickynote.intro .LangNav a:hover {
+  font-size: 0.7em;
+}
 #main .stickynote h2 {
   color: #333;
   padding: 0.5em;
@@ -476,6 +487,7 @@ body.is-poptrox-visible #wrapper {
   -ms-justify-content: center;
   justify-content: center;
   padding: 1em 2.2em;
+  transform: rotate(0deg);
 }
 #main .item.intro h1 {
   font-size: 2.2em;
@@ -491,6 +503,19 @@ body.is-poptrox-visible #wrapper {
   margin: 0.5em 0 0 0;
   opacity: 0.65;
   color: #333;
+}
+#main .item.intro .LangNav {
+  position: absolute;
+  right: 0.7em;
+  bottom: 0em;
+}
+#main .item.intro .LangNav a {
+  font-size: 0.7em;
+  color: #336;
+}
+#main .item.intro .LangNav a:hover {
+  font-size: 0.7em;
+  color: #669;
 }
 #main .item.thumb:hover img {
   transform: scale(1.38) translateX(1em) translateY(0.8em);
