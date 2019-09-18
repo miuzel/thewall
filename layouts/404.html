@@ -1,0 +1,17 @@
+
+{{ define "main"  }}
+<!-- Items -->
+<div class="items">
+<div class="stickynote intro span-4">
+    <h1>{{ i18n "notfound"}}</h1>
+<div class="home"> <a href="{{ "/" | absLangURL }}" class="fas fa-arrow-circle-left"><span class="label"></span></a></div>
+    {{ if .IsTranslated }}
+    <div class="LangNav">
+        {{ range .Translations }}
+            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end}}
+    </div>
+{{ end }}
+</div>
+
+{{ end }}

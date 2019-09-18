@@ -1,2 +1,10 @@
 - id: license
   translation: <strong>{{ .Site.Title }}</strong> is powered by <a href="https://gohugo.io">HUGO</a> based on <a href="http://html5up.net">HTML5 UP</a> boilerplate  <strong>Parallelism</strong> which is protected by <a href="http://html5up.net/license">Creative Commons Attribution</a>
+- id: prev
+  translation: Previous
+- id: next
+  translation: Next
+- id: notfound
+  translation: 404 Page not found
+- id: home
+  translation: Home

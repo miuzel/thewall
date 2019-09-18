@@ -396,7 +396,7 @@
 				}
 				p {
 					font-size: 1.25em;
-					line-height: 1.5em;
+					line-height: 1em;
 					margin: 0.5em 0 0 0;
 					opacity: 0.65;
 					padding:0;
@@ -406,12 +406,12 @@
 				.LangNav {
 					position: absolute;
 					right:0.7em;
-					bottom: 0em;
+					bottom: 0.3em;
 					a {
-						font-size: 0.7em;
+						font-size: 1em;
 					}
 					a:hover {
-						font-size: 0.7em;
+						font-size: 1em;
 					}
 				}
 			}
@@ -488,13 +488,13 @@
 				.LangNav {
 					position: absolute;
 					right:0.7em;
-					bottom: 0em;
+					bottom: 0.3em;
 					a {
-						font-size: 0.7em;
+						font-size: 1em;
 						color: #336;
 					}
 					a:hover {
-						font-size: 0.7em;
+						font-size: 1em;
 						color: #669;
 					}
 				}
@@ -671,7 +671,7 @@
 		> section {
 			&:first-child {
 				text-align: left;
-				max-width: 36em;
+				max-width: 40em;
 				padding-right: 2em;
 
 				p {

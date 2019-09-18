@@ -1,84 +1,80 @@
-<!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body style="
-  background-image: url(/assets/css/images/overlay.png), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);
-  background-image: url(/assets/css/images/overlay.png), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)),url(/images/bg-wall.jpg);
-  background-image: url(/assets/css/images/overlay.png), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);
-  background-image: url(/assets/css/images/overlay.png), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)),url(/images/bg-wall.jpg);
-  background-repeat: repeat-y;">
-        {{- partial "header.html" . -}}
-            <!-- Items -->
-            <div class="items">
-                <div class="item intro span-2">
-                    <h1>{{ .Site.Title }}</h1>
-                    <p>{{ .Site.Params.description }}</p>
-                    {{ if .IsTranslated }}
-                        <div class="LangNav">
-                        {{ range .Translations }}
-                            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-                        {{ end}}
-                        </div>
-                    {{ end }}
-                </div>
-                {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 20 }}
-                
-                    {{ range $index, $page := $paginator.Pages }}
-                        {{ if lt $index (div $paginator.PageSize 2)}}
-                        <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 23) 3 ) }}">
-                            <a class="link" href="{{ .Permalink }}">
-                                <h2>{{ .Title }}
-                                    <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
-                                </h2>
-                                {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
-                                {{ if (fileExists $thumb) -}}
-                                <img src="{{ $thumb  | absURL }}">
-                                {{ else }}
-                                <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
-                                {{- end }}
-                                <!-- <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg"> -->
-                            </a>
-                        </article>
-                        {{ end }}
-                    {{ end }}
+{{ define "body"}}
+<body style="
+background-image: url(/assets/css/images/overlay.png), -moz-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);
+background-image: url(/assets/css/images/overlay.png), -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)),url(/images/bg-wall.jpg);
+background-image: url(/assets/css/images/overlay.png), -ms-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)), url(/images/bg-wall.jpg);
+background-image: url(/assets/css/images/overlay.png), linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.65)),url(/images/bg-wall.jpg);
+background-repeat: repeat-y;">
+{{ end }}
+{{define "main"}}
+        <div class="items">
+            <div class="item intro span-2">
+                <h1>{{ .Site.Title }}</h1>
+                <p>{{ .Site.Params.description }}</p>
+                {{ if .IsTranslated }}
+                    <div class="LangNav">
+                    {{ range .Translations }}
+                        <a href="{{ .Permalink }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
+                    {{ end}}
+                    </div>
+                {{ end }}
             </div>
-            <div class="items">
-                    
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 20 }}
+            
                 {{ range $index, $page := $paginator.Pages }}
-                    {{ if ge $index (div $paginator.PageSize 2)}}
-                    <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 29) 3 ) }}">
+                    {{ if lt $index (div $paginator.PageSize 2)}}
+                    <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 23) 3 ) }}">
                         <a class="link" href="{{ .Permalink }}">
-                    <h2>{{ .Title }}  
-                        <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
-                    </h2>
-                    
-                    {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
-                    {{ if (fileExists $thumb) -}}
-                    <img src="{{ $thumb  | absURL }}">
-                    {{ else }}
-                    <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
-                    {{- end }}
-                    
-
+                            <h2>{{ .Title }}
+                                <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
+                            </h2>
+                            {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
+                            {{ if (fileExists $thumb) -}}
+                            <img src="{{ $thumb  | absURL }}">
+                            {{ else }}
+                            <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
+                            {{- end }}
+                            <!-- <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg"> -->
+                        </a>
                     </article>
                     {{ end }}
                 {{ end }}
-            </div>
+        </div>
+        <div class="items">
+                
+            {{ range $index, $page := $paginator.Pages }}
+                {{ if ge $index (div $paginator.PageSize 2)}}
+                <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 29) 3 ) }}">
+                    <a class="link" href="{{ .Permalink }}">
+                <h2>{{ .Title }}  
+                    <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
+                </h2>
+                
+                {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
+                {{ if (fileExists $thumb) -}}
+                <img src="{{ $thumb  | absURL }}">
+                {{ else }}
+                <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
+                {{- end }}
+                
 
-        
-						
-        {{ if gt $paginator.TotalPages 1 }}
-        <footer class="page-footer">
-        <nav class="pagination">
-            {{ if $paginator.HasPrev }}
-            <a class="prev" href="{{ $paginator.Prev.URL }}"> 上一页</a>
+                </article>
+                {{ end }}
             {{ end }}
-            {{ if $paginator.HasNext }}
-            <a class="next" href="{{ $paginator.Next.URL }}">下一页 </a>
-            {{ end }}
-        </nav>
-        </footer>
+        </div>
+
+    
+                    
+    {{ if gt $paginator.TotalPages 1 }}
+    <footer class="page-footer">
+    <nav class="pagination">
+        {{ if $paginator.HasPrev }}
+        <a class="prev" href="{{ $paginator.Prev.URL }}"> {{i18n "prev"}}</a>
         {{ end }}
-        {{- partial "footer.html" . -}}
-    </body>
-</html>
+        {{ if $paginator.HasNext }}
+        <a class="next" href="{{ $paginator.Next.URL }}">{{i18n "next"}} </a>
+        {{ end }}
+    </nav>
+    </footer>
+    {{ end }}
+{{end}}

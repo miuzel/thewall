@@ -411,7 +411,7 @@ body.is-poptrox-visible #wrapper {
 }
 #main .stickynote.intro p {
   font-size: 1.25em;
-  line-height: 1em;
+  line-height: 1.5em;
   margin: 0.5em 0 0 0;
   opacity: 0.65;
   padding: 0;
@@ -421,13 +421,13 @@ body.is-poptrox-visible #wrapper {
 #main .stickynote.intro .LangNav {
   position: absolute;
   right: 0.7em;
-  bottom: 0.3em;
+  bottom: 0em;
 }
 #main .stickynote.intro .LangNav a {
-  font-size: 1em;
+  font-size: 0.7em;
 }
 #main .stickynote.intro .LangNav a:hover {
-  font-size: 1em;
+  font-size: 0.7em;
 }
 #main .stickynote h2 {
   color: #333;
@@ -507,14 +507,14 @@ body.is-poptrox-visible #wrapper {
 #main .item.intro .LangNav {
   position: absolute;
   right: 0.7em;
-  bottom: 0.3em;
+  bottom: 0em;
 }
 #main .item.intro .LangNav a {
-  font-size: 1em;
+  font-size: 0.7em;
   color: #336;
 }
 #main .item.intro .LangNav a:hover {
-  font-size: 1em;
+  font-size: 0.7em;
   color: #669;
 }
 #main .item.thumb:hover img {
@@ -676,7 +676,7 @@ body.is-preload #main .item.thumb img {
 }
 #footer > section:first-child {
   text-align: left;
-  max-width: 40em;
+  max-width: 36em;
   padding-right: 2em;
 }
 #footer > section:first-child p {
