@@ -16,7 +16,6 @@
         {{ $csv := path.Join "content/" (path.Join .File.Dir "data.csv")}}
         {{ $data :=  getCSV "," $csv }}
         {{ $column := .Site.Params.datacolumn}}
-        {{ print $column}}
         {{ range $i, $r := $data}}
         {{ if eq 2 (mod $i 3)}}
         <a class="pop" href='/images/fulls/01.jpg'><article 
