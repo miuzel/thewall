@@ -3,12 +3,12 @@
 <div class="items">
     <div class="stickynote intro span-4">
     {{ .Content }}
-    <div class="home"> <a href="{{ "/" | absLangURL }}" class="fas fa-arrow-circle-left"><span class="label"></span></a></div>
+    <div class="home"> <a href="{{ "/" | relLangURL }}" class="fas fa-arrow-circle-left"><span class="label"></span></a></div>
     
     {{ if .IsTranslated }}
     <div class="LangNav">
     {{ range .Translations }}
-        <a href="{{ .Permalink }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
+        <a href="{{ .Permalink | relLangURL }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
     {{ end}}
     </div>
         {{ end }}

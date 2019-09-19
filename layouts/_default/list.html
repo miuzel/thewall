@@ -14,7 +14,7 @@ background-repeat: repeat-y;">
                 {{ if .IsTranslated }}
                     <div class="LangNav">
                     {{ range .Translations }}
-                        <a href="{{ .Permalink }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
+                        <a href="{{ .Permalink | relURL }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
                     {{ end}}
                     </div>
                 {{ end }}
@@ -24,15 +24,15 @@ background-repeat: repeat-y;">
                 {{ range $index, $page := $paginator.Pages }}
                     {{ if lt $index (div $paginator.PageSize 2)}}
                     <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 23) 3 ) }}">
-                        <a class="link" href="{{ .Permalink }}">
+                        <a class="link" href="{{ .Permalink | relURL }}">
                             <h2>{{ .Title }}
                                 <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
                             </h2>
                             {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
                             {{ if (fileExists $thumb) -}}
-                            <img src="{{ $thumb  | absURL }}">
+                            <img src="{{ $thumb | relURL }}">
                             {{ else }}
-                            <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
+                            <img src="/images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
                             {{- end }}
                             <!-- <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg"> -->
                         </a>
@@ -45,16 +45,16 @@ background-repeat: repeat-y;">
             {{ range $index, $page := $paginator.Pages }}
                 {{ if ge $index (div $paginator.PageSize 2)}}
                 <article  title="{{ .Title }}" class="item thumb span-{{ add 1 (mod (mul $index 29) 3 ) }}">
-                    <a class="link" href="{{ .Permalink }}">
+                    <a class="link" href="{{ .Permalink | relURL }}">
                 <h2>{{ .Title }}  
                     <!-- <time>{{ .Date.Format "2006-01-02" }}</time> -->
                 </h2>
                 
                 {{ $thumb := path.Join .File.Dir "thumb.jpg"}}
                 {{ if (fileExists $thumb) -}}
-                <img src="{{ $thumb  | absURL }}">
+                <img src="{{ $thumb | relURL }}">
                 {{ else }}
-                <img src="images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
+                <img src="/images/thumbs/0{{ add 1 (mod (mul $index 17) 6 ) }}.jpg">
                 {{- end }}
                 
 
@@ -69,10 +69,10 @@ background-repeat: repeat-y;">
     <footer class="page-footer">
     <nav class="pagination">
         {{ if $paginator.HasPrev }}
-        <a class="prev" href="{{ $paginator.Prev.URL }}"> {{i18n "prev"}}</a>
+        <a class="prev" href="{{ $paginator.Prev.URL  | relURL }}"> {{i18n "prev"}}</a>
         {{ end }}
         {{ if $paginator.HasNext }}
-        <a class="next" href="{{ $paginator.Next.URL }}">{{i18n "next"}} </a>
+        <a class="next" href="{{ $paginator.Next.URL  | relURL }}">{{i18n "next"}} </a>
         {{ end }}
     </nav>
     </footer>
