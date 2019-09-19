@@ -14,7 +14,7 @@ background-repeat: repeat-y;">
                 {{ if .IsTranslated }}
                     <div class="LangNav">
                     {{ range .Translations }}
-                        <a href="{{ .Permalink | relURL }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
+                        <a href="{{ .Permalink }}"><i class="fas fa-globe"></i> {{ .Language.LanguageName }}</a>
                     {{ end}}
                     </div>
                 {{ end }}
