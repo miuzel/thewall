@@ -3,7 +3,7 @@
 <div class="items">
     <div class="stickynote intro span-4">
     {{ .Content }}
-    <div class="home"> <a href="{{ "/" | relLangURL }}" class="fas fa-arrow-circle-left"><span class="label"></span></a></div>
+    <div class="home"> <a href="{{ "/" | relLangURL }}" class="homelink fas fa-arrow-circle-left"><span class="label"></span></a></div>
     
     {{ if .IsTranslated }}
     <div class="LangNav">
@@ -58,5 +58,15 @@
     {{ end }}
 </div>
 
+
+<script>
+const home = document.querySelector('.homelink');
+if ((home) 
+  && (document.referrer.includes(window.location.host))
+  && (document.referrer !== "")
+  && (document.referrer !== window.location.href)) {
+    home.href = document.referrer;
+}
+</script>
 {{- end }}
 
